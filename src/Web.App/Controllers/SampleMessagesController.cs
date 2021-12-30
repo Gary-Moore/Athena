@@ -36,7 +36,7 @@ namespace Web.App.Controllers
 
             ViewBag.Confirmation = "Demo messages sent";
 
-            return View();
+            return View("Index", model);
         }
 
         [HttpPost]
