@@ -31,7 +31,7 @@ jobs:
       uses: microsoft/variable-substitution@v1
       with:
       # comma separated list of XML/JSON/YAML files in which tokens are to be substituted. Files names must be specified relative to the folder-path.
-        files: '${{env.DOTNET_ROOT}}/src/src/Web.App/appsettings.json'
+        files: '${{env.DOTNET_ROOT}}/src/Web.App/appsettings.json'
       env:
         ApplicationInsights:InstrumentationKey: ${{ secrets.APPINSIGHTS_INSTRUMENTATION_KEY }}
       
