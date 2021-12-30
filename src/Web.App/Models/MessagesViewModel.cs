@@ -8,5 +8,6 @@ namespace Web.App.Models
     public class MessagesViewModel
     {
         public string Error { get; set; }
+
     }
 }

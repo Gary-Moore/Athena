@@ -1,4 +1,4 @@
-﻿@model MessagesViewModel 
+﻿@model MessagesViewModel
 @{
     ViewData["Title"] = "Sample Messages";
     var confirmation = ViewBag.Confirmation;
@@ -22,3 +22,9 @@
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
+<form asp-action="Exception" method="post" class="form-inline">
+    <label class="my-1 mr-2" asp-for="Error">Throw Test Exception</label>
+    <input type="text" asp-for="Error" class="form-control mb-2 mr-sm-2" id="exceptionTest" placeholder="Exception">
+
+    <button type="submit" class="btn btn-primary mb-2">Submit</button>
+</form>
