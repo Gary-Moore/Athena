@@ -23,8 +23,22 @@ namespace Web.App.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        [HttpGet]
+        public IActionResult Messages()
         {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Messages(MessagesViewModel model)
+        {
+            if (!string.IsNullOrWhiteSpace( model.Error))
+            {
+                _logger.LogError(model.Error);
+            }
+
+            ViewBag.Confirmation = "Demo messages sent";
+
             return View();
         }
 

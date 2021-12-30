@@ -1,0 +1,24 @@
+﻿@model MessagesViewModel 
+@{
+    ViewData["Title"] = "Sample Messages";
+    var confirmation = ViewBag.Confirmation;
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Send sample messages to App Insights</p>
+
+@if (confirmation != null)
+{
+    <div class="alert alert-info" role="alert">
+        Sample Log messages sent!
+    </div>
+}
+
+<form asp-action="Messages" method="post">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Error Message</label>
+        <input type="text" asp-for="Error" class="form-control" id="errorMessage">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
