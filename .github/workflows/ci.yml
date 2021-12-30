@@ -7,6 +7,9 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+env:
+  AZURE_WEBAPP_NAME: 'gw-athena-test'
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,6 +27,14 @@ jobs:
     - name: Build
       run: dotnet build ./src/Athena.sln --no-restore --configuration Release
       
+    - name: Variable Substitution
+      uses: microsoft/variable-substitution@v1
+      with:
+      # comma separated list of XML/JSON/YAML files in which tokens are to be substituted. Files names must be specified relative to the folder-path.
+        files: '${{env.DOTNET_ROOT}}/src/src/Web.App/appsettings.json'
+      env:
+        ApplicationInsights:InstrumentationKey: ${{ secrets.APPINSIGHTS_INSTRUMENTATION_KEY }}
+      
     - name: Test
       run: dotnet test ./src/Athena.sln --no-build --verbosity normal
       
@@ -34,7 +45,7 @@ jobs:
       uses: actions/upload-artifact@v2.3.1
       with:
           name: .net-app
-          path: ${{env.DOTNET_ROOT}}/athena
+          path: ${{env.DOTNET_ROOT}}/athena      
 
   deploy:  
     runs-on: ubuntu-latest
@@ -54,7 +65,7 @@ jobs:
       id: deploy-to-webapp
       uses: Azure/webapps-deploy@v2
       with: 
-        app-name: 'gw-athena-test'
+        app-name: ${{ env.AZURE_WEBAPP_NAME }}
         slot-name: 'Production'
         publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B633D79EA1AB4C3CA72CC3D143159165 }}
         package: .
