@@ -10,6 +10,7 @@ namespace Web.App.Infrastructure
             if (string.IsNullOrEmpty(telemetry.Context.Cloud.RoleName))
             {
                 telemetry.Context.Cloud.RoleName = "Athena-WebApp";
+                telemetry.Context.Cloud.RoleInstance = "Athena-Web-Application";
             }
         }
     }
