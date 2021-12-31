@@ -14,11 +14,9 @@
     </div>
 }
 
-<form asp-action="Messages" method="post">
-    <div class="form-group">
-        <label for="exampleInputEmail1">Error Message</label>
-        <input type="text" asp-for="Error" class="form-control" id="errorMessage">
-    </div>
+<form asp-action="Messages" method="post" class="form-inline">
+    <label class="my-1 mr-2" asp-for="Error">Error Message</label>
+    <input type="text" asp-for="Error" class="form-control mb-2 mr-sm-2" id="errorMessage">
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 

@@ -1,4 +1,5 @@
 using System;
+using Athena.Core.Logging;
 using Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,8 +12,15 @@ namespace Web.App
     {
         public static int Main(string[] args)
         {
+            var logDetail = new LogDetail()
+            {
+                Product = "Athena",
+                ApplicationName = "Web Application"
+            };
+
             Log.Logger = new LoggerConfiguration()
             .WriteTo.Console()
+            .ConfigureBaseLogging(logDetail)
             .CreateBootstrapLogger();
 
             try
@@ -36,6 +44,12 @@ namespace Web.App
             Host.CreateDefaultBuilder(args)
             .UseSerilog((context, services, loggerConfiguration) =>
             {
+                var logDetail = new LogDetail()
+                {
+                    Product = "Athena",
+                    ApplicationName = "Web Application"
+                };
+                loggerConfiguration.ConfigureBaseLogging(logDetail);
                 loggerConfiguration.WriteTo.ApplicationInsights(services.GetRequiredService<TelemetryConfiguration>(), TelemetryConverter.Traces);
             })
             .ConfigureWebHostDefaults(webBuilder =>
