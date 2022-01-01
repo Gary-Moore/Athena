@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Athena.Core.Exceptions;
+﻿using Athena.Core.Exceptions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Web.App.Models;
@@ -57,7 +53,7 @@ namespace Web.App.Controllers
 
             ViewBag.Confirmation = "Demo Exception Sent";
 
-            return View();
+            return View("Index", model);
         }
     }
 }
