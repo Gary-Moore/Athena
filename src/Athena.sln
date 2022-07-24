@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.App", "Web.App\Web.App.csproj", "{94D91B1A-0AC4-46B7-9825-D494584BEA6A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web.App", "Web.App\Web.App.csproj", "{94D91B1A-0AC4-46B7-9825-D494584BEA6A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Athena.Core", "Athena.Core\Athena.Core.csproj", "{47D7F659-E167-4322-9F1C-DB2E6D3EE9A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Athena.Core", "Athena.Core\Athena.Core.csproj", "{47D7F659-E167-4322-9F1C-DB2E6D3EE9A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Athena.Infrastructure", "Athena.Infrastructure\Athena.Infrastructure.csproj", "{3C9A6900-D5C5-4CEB-BD00-E8651090EC9B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{47D7F659-E167-4322-9F1C-DB2E6D3EE9A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47D7F659-E167-4322-9F1C-DB2E6D3EE9A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47D7F659-E167-4322-9F1C-DB2E6D3EE9A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C9A6900-D5C5-4CEB-BD00-E8651090EC9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C9A6900-D5C5-4CEB-BD00-E8651090EC9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C9A6900-D5C5-4CEB-BD00-E8651090EC9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C9A6900-D5C5-4CEB-BD00-E8651090EC9B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

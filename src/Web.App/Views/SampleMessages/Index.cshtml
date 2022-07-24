@@ -14,15 +14,27 @@
     </div>
 }
 
-<form asp-action="Messages" method="post" class="form-inline">
-    <label class="my-1 mr-2" asp-for="Error">Error Message</label>
-    <input type="text" asp-for="Error" class="form-control mb-2 mr-sm-2" id="errorMessage">
-    <button type="submit" class="btn btn-primary">Submit</button>
+<form asp-action="Messages" method="post" class="row row-cols-lg-auto g-3 align-items-center">
+    <div class="col-12">
+        <label class="" asp-for="Error">Error Message</label>
+    </div>
+    <div class="col-12">
+        <input type="text" asp-for="Error" class="form-control" id="errorMessage">
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>    
 </form>
 
-<form asp-action="Exception" method="post" class="form-inline">
-    <label class="my-1 mr-2" asp-for="Error">Throw Test Exception</label>
-    <input type="text" asp-for="Error" class="form-control mb-2 mr-sm-2" id="exceptionTest" placeholder="Exception">
 
-    <button type="submit" class="btn btn-primary mb-2">Submit</button>
+<form asp-action="Messages" method="post" class="row row-cols-lg-auto g-3 align-items-center">
+    <div class="col-12">
+        <label class="" asp-for="Error">Throw Test Exception</label>
+    </div>
+    <div class="col-12">
+        <input type="text" asp-for="Error" class="form-control" id="exceptionTest" placeholder="Exception">
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>    
 </form>

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Athena</title>
+
     <environment exclude="Development">
         <link rel="stylesheet" href="~/dist/app.css" asp-append-version="true">
     </environment>
@@ -37,11 +38,14 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="footer mt-auto py-3 bg-light">
         <div class="container">
-            &copy; 2021 - Gamma Web Solutions
+            <p class="col-md-4 mb-0 text-muted">
+                    &copy; 2021 - Gamma Web Solutions
+                </p>
         </div>
     </footer>
+
     <script src="~/dist/app.bundle.js" asp-append-version="true"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
