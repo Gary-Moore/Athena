@@ -44,10 +44,6 @@ variable "Azure.WebApp.Sku.Code" {
     value "S1" {}
 }
 
-variable "Global.Api.Key" {
-    value "API-F1GU6NWMSQ58HCRXCU5MEQWDLLRKO" {}
-}
-
 variable "Global.Base.Url" {
     value "http://localhost:8080" {}
 }
