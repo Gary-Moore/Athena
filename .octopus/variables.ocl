@@ -55,3 +55,11 @@ variable "Global.Base.Url" {
 variable "Global.Worker.ImageName" {
     value "octopusdeploy/worker-tools:3.3.2-ubuntu.18.04" {}
 }
+
+variable "Octopus.Azure.Account" {
+    type = "AzureAccount"
+
+    value "gammaweb-solutions" {
+        description = ""
+    }
+}
