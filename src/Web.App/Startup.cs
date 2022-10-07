@@ -29,7 +29,10 @@ namespace Web.App
             services.AddApplicationInsightsTelemetry();
             
             services.AddDbContext<AthenaContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(Configuration.GetConnectionString("ApplicationDb"),
+            optionsBuilder => optionsBuilder.MigrationsAssembly("Athena.Infrastructure")));
+            
+            services.AddDatabaseDeveloperPageExceptionFilter();
             
             services.AddControllersWithViews();
         }
