@@ -41,8 +41,5 @@
     </ItemGroup>
   </Target>
 
-  <Target Name="PublishEfBundle" AfterTargets="AfterPublish">
-    <Copy SourceFiles="efbundle.exe" DestinationFolder="$(MSBuildProjectDirectory)\$(PublishUrl)" />
-  </Target>
 
 </Project>
