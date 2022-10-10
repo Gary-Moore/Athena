@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Infrastructure\Middleware\" />
+    <Folder Include="Infrastructure\Middleware\" />    
   </ItemGroup>
 
   <Target Name="Webpack" AfterTargets="ComputeFilesToPublish">
@@ -39,6 +39,10 @@
         <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       </ResolvedFileToPublish>
     </ItemGroup>
+  </Target>
+
+  <Target Name="PublishEfBundle" AfterTargets="AfterPublish">
+    <Copy SourceFiles="efbundle.exe" DestinationFolder="$(MSBuildProjectDirectory)\$(PublishUrl)"/>
   </Target>
 
 </Project>
