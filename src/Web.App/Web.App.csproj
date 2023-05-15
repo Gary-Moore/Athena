@@ -5,7 +5,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Infrastructure\Middleware\**" />
+    <Content Remove="Infrastructure\Middleware\**" />
+    <EmbeddedResource Remove="Infrastructure\Middleware\**" />
+    <None Remove="Infrastructure\Middleware\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.21.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.16">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.5" />
     <PackageReference Include="Serilog.AspNetCore" Version="6.0.1" />
     <PackageReference Include="Serilog.Extensions.Logging.File" Version="3.0.0" />
@@ -16,10 +27,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Athena.Core\Athena.Core.csproj" />
     <ProjectReference Include="..\Athena.Infrastructure\Athena.Infrastructure.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Infrastructure\Middleware\" />    
   </ItemGroup>
 
   <Target Name="Webpack" AfterTargets="ComputeFilesToPublish">
