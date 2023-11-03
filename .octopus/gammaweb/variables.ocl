@@ -1,7 +1,3 @@
 variable "Package.Id" {
     value "Athena.Web" {}
 }
-
-variable "API Key" {
-    value "abc123" {}
-}
