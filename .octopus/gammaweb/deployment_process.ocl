@@ -1,0 +1,40 @@
+step "run-a-script" {
+    name = "Run a Script"
+
+    action {
+        action_type = "Octopus.Script"
+        properties = {
+            Octopus.Action.RunOnServer = "true"
+            Octopus.Action.Script.ScriptBody = <<-EOT
+                # Assuming the EFBundle.exe is included in the deployment package
+                
+                Write-Host "starting process"
+                $ExtractedPath = $OctopusParameters["Octopus.Action.Package[Athena.Web].ExtractedPath"]
+                $extractPath = $OctopusParameters['Octopus.Action.Package.InstallationDirectoryPath'] 
+                Write-Host "package path:  $extractPath $ExtractedPath"
+                #$efBundleExePath = Join-Path $OctopusPackageDirectoryPath "EFBundle.exe" 
+                
+                # Replace with your specific EFBundle.exe command
+                #$efBundleCommand = "$efBundleExePath MyProject.dll MyNamespace.MyDbContext MyProject.bundle.dll"
+                
+                # Execute the EFBundle.exe command
+                Write-Host "Executing EFBundle.exe..."
+                #Invoke-Expression $efBundleCommand
+                
+                EOT
+            Octopus.Action.Script.ScriptSource = "Inline"
+            Octopus.Action.Script.Syntax = "PowerShell"
+        }
+
+        packages "Athena.Web" {
+            acquisition_location = "Server"
+            feed = "octopus-server-built-in"
+            package_id = "#{Package.Id}"
+            properties = {
+                Extract = "True"
+                Purpose = ""
+                SelectionMode = "immediate"
+            }
+        }
+    }
+}
