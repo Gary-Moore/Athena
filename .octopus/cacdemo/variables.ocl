@@ -1,3 +1,5 @@
 variable "Package.Id" {
-    value "Athena.Web" {}
+    value "Athena.Web" {
+        environment = ["development"]
+    }
 }
