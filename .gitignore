@@ -348,3 +348,5 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+/src/Web.App/dist/out-tsc
+/src/Web.App/wwwroot/dist/app.bundle.js
