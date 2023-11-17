@@ -1,10 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.App", "Web.App\Web.App.csproj", "{F695CC05-337E-4F0C-AFDC-29057AE9B2AD}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33502.453
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web.App", "Web.App\Web.App.csproj", "{F695CC05-337E-4F0C-AFDC-29057AE9B2AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Athena.Core", "Athena.Core\Athena.Core.csproj", "{5B8B2B51-6B00-4A4A-A5BD-98E87D9D17F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Athena.Core", "Athena.Core\Athena.Core.csproj", "{5B8B2B51-6B00-4A4A-A5BD-98E87D9D17F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Athena.Infrastructure", "Athena.Infrastructure\Athena.Infrastructure.csproj", "{B3A9B480-7386-4F76-8ACF-BD2E0F0F4AA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Athena.Infrastructure", "Athena.Infrastructure\Athena.Infrastructure.csproj", "{B3A9B480-7386-4F76-8ACF-BD2E0F0F4AA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Athena.Tests", "Athena.Tests\Athena.Tests.csproj", "{70612265-91BC-4F1E-90CB-C74293B2D065}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +29,15 @@ Global
 		{B3A9B480-7386-4F76-8ACF-BD2E0F0F4AA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3A9B480-7386-4F76-8ACF-BD2E0F0F4AA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3A9B480-7386-4F76-8ACF-BD2E0F0F4AA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70612265-91BC-4F1E-90CB-C74293B2D065}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70612265-91BC-4F1E-90CB-C74293B2D065}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70612265-91BC-4F1E-90CB-C74293B2D065}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70612265-91BC-4F1E-90CB-C74293B2D065}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1B767A0D-50AE-41F8-B204-C23B3359C03C}
 	EndGlobalSection
 EndGlobal

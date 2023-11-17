@@ -1,5 +1,6 @@
 using System;
 using Athena.Core.Logging;
+using Autofac.Extensions.DependencyInjection;
 using Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -42,6 +43,7 @@ namespace Web.App
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+            .UseServiceProviderFactory(new AutofacServiceProviderFactory())
             .UseSerilog((context, services, loggerConfiguration) =>
             {
                 var logDetail = new LogDetail()

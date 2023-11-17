@@ -1,16 +1,17 @@
 ﻿using Athena.Core.Entities;
+using Athena.Core.Interfaces;
 using Athena.Infrastructure.Database.Configuration;
 using Microsoft.EntityFrameworkCore;
 
 namespace Athena.Infrastructure.Database;
 
-public class AthenaContext : DbContext
+public class AthenaContext : DbContext, IAthenaDbContext
 {
     public AthenaContext(DbContextOptions<AthenaContext> options) : base(options)
     {
     }
 
-    private DbSet<Product> Products { get; set; }
+    public DbSet<Product> Products { get; set; }
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
