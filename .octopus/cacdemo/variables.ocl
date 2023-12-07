@@ -1,0 +1,3 @@
+variable "Package.Id" {
+    value "Athena.Web" {}
+}
