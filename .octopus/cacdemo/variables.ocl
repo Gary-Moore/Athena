@@ -1,13 +1,3 @@
 variable "Package.Id" {
     value "Athena.Web" {}
 }
-
-variable "ApiKey" {
-    value "32432432432" {
-        environment = ["development"]
-    }
-
-    value "34534534534" {
-        environment = ["qa"]
-    }
-}
